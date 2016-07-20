@@ -140,3 +140,14 @@ const styles = StyleSheet.create({
 });
 
 AppRegistry.registerComponent('MovieProject', () => MovieProject);
+
+// getDefaultProps
+// getInitialState
+// componentWillMount
+// render
+// componentDidMount
+// componentWillReceiveProps
+// shouComponentUpdate
+// componentWillUpdate
+// componentDidUpdate
+// componentWillUnmount
