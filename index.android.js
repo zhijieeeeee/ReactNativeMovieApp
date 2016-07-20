@@ -25,6 +25,7 @@ class MovieProject extends Component {
     this.state={
       // movies:null,
       dataSource:new ListView.DataSource({rowHasChanged:(row1,row2)=>row1!==row2}),
+      size:0,
       loaded:false,
     };
     // 在ES6中，如果在自定义的函数里使用了this关键字，则需要对其进行“绑定”操作，否则this的指向不对
@@ -46,6 +47,7 @@ class MovieProject extends Component {
             this.setState({
               // movies: responseData.movies,
               dataSource:this.state.dataSource.cloneWithRows(responseData.movies),
+              size:responseData.total,
               loaded:true,
             });
           })
@@ -62,10 +64,16 @@ class MovieProject extends Component {
 
     // var netMovie=this.state.movies[0];
     return (
-      <ListView
-         dataSource={this.state.dataSource}
-         renderRow={this.renderMovieView}
-       />
+      <View style={{flex:1}}>
+        <Text style={{fontSize:20,textAlign:'center',backgroundColor:'red'}}>
+          一共{this.state.size}条电影
+        </Text>
+
+        <ListView
+           dataSource={this.state.dataSource}
+           renderRow={this.renderMovieView}
+         />
+      </View>
     )
     // return this.renderMovieView(netMovie);
 
@@ -85,6 +93,7 @@ class MovieProject extends Component {
     // );
   }
 
+  //正在加载视图
   renderLoadingView(){
     return(
       <View style={styles.container}>
@@ -93,6 +102,7 @@ class MovieProject extends Component {
     );
   }
 
+  //电影列表项视图
   renderMovieView(movie){
     return (
       <View style={styles.container}>
@@ -102,8 +112,8 @@ class MovieProject extends Component {
             style={styles.thumbnail}/>
         </View>
         <View style={styles.textContainer}>
-          <Text style={{fontSize:20}}>{movie.title}</Text>
-          <Text style={{fontSize:15}}>{movie.year}</Text>
+          <Text style={{fontSize:15}}>{movie.title}</Text>
+          <Text style={{fontSize:10}}>{movie.year}</Text>
         </View>
       </View>
     );
@@ -118,15 +128,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
   textContainer:{
     flex:1,
     marginLeft:10
   },
   thumbnail:{
-    width:50,
-    height:50
+    width:100,
+    height:100
   },
 });
 
