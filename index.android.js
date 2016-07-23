@@ -147,7 +147,7 @@ AppRegistry.registerComponent('MovieProject', () => MovieProject);
 // render
 // componentDidMount
 // componentWillReceiveProps
-// shouComponentUpdate
+// shouldComponentUpdate
 // componentWillUpdate
 // componentDidUpdate
 // componentWillUnmount
