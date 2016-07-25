@@ -73,6 +73,8 @@ class ImageAndTouchComponent extends Component{
             <MyButton label='哈哈哈' style={{width:100,backgroundColor:'red'}}/>
         </TouchableOpacity>
 
+        <ArrayComponent
+          news={['a1','b2','c3','d4','e5','f6']}/>
       </View>
     );
   }
@@ -101,12 +103,34 @@ class MyButton extends Component{
 
     render(){
         return(
-            //{...this.props}是把为MyButton设置的属性传递过来
+            //{...this.props}是把为MyButton设置的属性传递过来，遍历MyButton属性，传递给View
             <View ref={component=>this._root=component} {...this.props}>
                 <Text>{this.props.label}</Text>
             </View>
         );
     }
+}
+
+class ArrayComponent extends Component{
+
+  render(){
+    var news=[];
+    //循环数组
+    for(let i in this.props.news){
+      var text=(
+        //这里的key是解决报黄错误
+        <Text key={i}>{this.props.news[i]}</Text>
+      );
+      //添加到数组
+      news.push(text);
+    }
+
+    return(
+      <View style={{flex:1}}>
+        {news}
+      </View>
+    );
+  }
 }
 
 
