@@ -80,10 +80,12 @@ class ImageAndTouchComponent extends Component{
   componentDidMount(){
       console.log('尝试一把');
       console.log('很好，很不错');
-      if(Platform.Version === 21){
+      if(Platform.Version == 21){
           console.log('Running on Lollipop!');
-      }else if(Platform.Version===19){
+          ToastAndroid.show('Running on Lollipop!',ToastAndroid.SHORT);
+      }else if(Platform.Version==19){
           console.log('Running on 19!');
+          ToastAndroid.show('Running on 19!',ToastAndroid.SHORT);
       }
   }
 }

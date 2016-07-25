@@ -11,7 +11,7 @@ import {
 
 AppRegistry.registerComponent('MovieProject', () => DrawerLayoutComponent);
 
-// getDefaultProps    ES6语法改为使用static defaultProps={};
+// getDefaultProps    ES6语法改为使用static defaultProps={};static propTypes={};
 // getInitialState
 // componentWillMount
 // render
