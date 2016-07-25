@@ -9,6 +9,8 @@ import {
   View,
   Image,
   ListView,
+  TouchableOpacity,
+  ActivityIndicator,
 } from 'react-native';
 
 //本地json测试
@@ -55,6 +57,17 @@ class MovieComponent extends Component {
           .done();
   }
 
+  /**
+   * 返回上一页
+   */
+  onBack(){
+    const {navigator}=this.props;
+    this.props.getSthBack('MovieComponent返回的');
+    if(navigator){
+      navigator.pop();
+    }
+  }
+
   render() {
     //本地测试数据
     // var movie=MOVIE_DATA_ARRAY[0];
@@ -66,6 +79,15 @@ class MovieComponent extends Component {
     // var netMovie=this.state.movies[0];
     return (
       <View style={{flex:1}}>
+        <TouchableOpacity onPress={()=>this.onBack()}>
+          <Text style={{fontSize:20}}>返回</Text>
+        </TouchableOpacity>
+
+        <Text style={{fontSize:15,textAlign:'center',backgroundColor:'black',color:'white'}}>
+          {/*上个界面传递过来的*/}
+          {this.props.title}
+        </Text>
+
         <Text style={{fontSize:20,textAlign:'center',backgroundColor:'red'}}>
           一共{this.state.size}条电影
         </Text>
@@ -104,6 +126,11 @@ class MovieComponent extends Component {
     return(
       <View style={styles.container}>
         <Text>正在加载.....{this.props.value}</Text>
+        <ActivityIndicator
+            animating={this.state.isShow}
+            color={'red'}
+            size={'large'}
+        />
       </View>
     );
   }

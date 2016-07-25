@@ -7,7 +7,7 @@ import {
   AppRegistry,
 } from 'react-native';
 
-AppRegistry.registerComponent('MovieProject', () => ImageAndTouchComponent);
+AppRegistry.registerComponent('MovieProject', () => MovieComponent);
 
 // getDefaultProps    ES6语法改为使用static defaultProps={};
 // getInitialState
