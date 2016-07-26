@@ -20,7 +20,7 @@ class NavigatorComponent extends Component{
         initialRoute={{name:defaultName,component:defaultComponent}}
         //跳转方式  node_modules/react-native/Libraries/CustomComponents/Navigator/NavigatorSceneConfigs.js
         configureScene={(route)=>{
-          return Navigator.SceneConfigs.VerticalDownSwipeJump;
+          return Navigator.SceneConfigs.PushFromRight ;//默认
         }}
         //传递
         renderScene={(route,navigator)=>{
