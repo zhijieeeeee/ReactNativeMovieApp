@@ -8,6 +8,7 @@ import {
   TextInput,
   View,
   Text,
+  ToastAndroid,
 } from 'react-native';
 
 class TextInputComponent extends Component{
@@ -40,6 +41,7 @@ class TextInputComponent extends Component{
         <View style={styles.container}>
           <View style={styles.input_view}>
             <TextInput
+              ref='ti'
               editable={true}
               autoCapitalize='words'
               autoFocus={true}
@@ -54,7 +56,11 @@ class TextInputComponent extends Component{
             />
           </View>
           <View style={styles.btn_view}>
-            <Text style={styles.btn}>搜索</Text>
+            <Text
+              style={styles.btn}
+              onPress={()=>{ToastAndroid.show(this.state.content,ToastAndroid.SHORT)}}>
+              搜索
+            </Text>
           </View>
         </View>
         {this.state.show ?

@@ -1,5 +1,5 @@
 /**
- *Picker学习
+ *Picker学习，类似与Spinner
  */
 
 import React, { Component } from 'react';
