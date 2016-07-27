@@ -29,6 +29,7 @@ class ImageAndTouchComponent extends Component{
 
   pressConsole(msg){
     console.log(msg);
+    alert(msg);
     ToastAndroid.show(msg, ToastAndroid.SHORT)
     this.setState({
       count:this.state.count+1,
@@ -43,7 +44,7 @@ class ImageAndTouchComponent extends Component{
         <Image source={require('../img/huge.jpg')}/>
         {/*调用网络图片*/}
         <Image source={{uri:'http://upload.yoyojie.com/2015/0826/1440558829455.jpg'}}
-              style={{width:100,height:100}}/>
+              style={{width:100,height:100,borderRadius:100}}/>
         <Text>
           {this.state.name} 点击数：{this.state.count}
         </Text>
