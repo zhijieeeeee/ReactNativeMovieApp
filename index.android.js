@@ -11,14 +11,15 @@ import ModalComponent from './component/ModalComponent';
 import RefreshControl from './component/RefreshControl';
 import SliderComponent from './component/SliderComponent';
 import StatusBarComponent from './component/StatusBarComponent';
-import ToolbarAndroidComponent from './component/ToolbarAndroidComponent'
+import ToolbarAndroidComponent from './component/ToolbarAndroidComponent';
+import ViewPagerAndroidComponent from './component/ViewPagerAndroidComponent';
 
 import React, { Component } from 'react';
 import {
   AppRegistry,
 } from 'react-native';
 
-AppRegistry.registerComponent('MovieProject', () => ToolbarAndroidComponent);
+AppRegistry.registerComponent('MovieProject', () => ViewPagerAndroidComponent);
 
 // getDefaultProps    ES6语法改为使用static defaultProps={};static propTypes={};
 // getInitialState
