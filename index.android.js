@@ -13,13 +13,15 @@ import SliderComponent from './component/SliderComponent';
 import StatusBarComponent from './component/StatusBarComponent';
 import ToolbarAndroidComponent from './component/ToolbarAndroidComponent';
 import ViewPagerAndroidComponent from './component/ViewPagerAndroidComponent';
+import WebViewComponent from './component/WebViewComponent';
+import LoginComponent from './component/Net'
 
 import React, { Component } from 'react';
 import {
   AppRegistry,
 } from 'react-native';
 
-AppRegistry.registerComponent('MovieProject', () => ViewPagerAndroidComponent);
+AppRegistry.registerComponent('MovieProject', () => LoginComponent);
 
 // getDefaultProps    ES6语法改为使用static defaultProps={};static propTypes={};
 // getInitialState

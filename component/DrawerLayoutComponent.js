@@ -21,7 +21,7 @@ class DrawerLayoutComponent extends Component{
     }
 
     onPress(){
-        this.refs.drawer.getDOMNode().openDrawer();
+        this.refs.drawer.openDrawer();
     }
 
     renderNavigationView(){
