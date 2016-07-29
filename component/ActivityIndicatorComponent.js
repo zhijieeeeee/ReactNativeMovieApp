@@ -21,13 +21,6 @@ class ActivityIndicatorComponent extends Component{
         };
     }
 
-    // getInitialState(){
-    //     return{
-    //         label:'隐藏',
-    //         isShow:true,
-    //     };
-    // }
-
     onShowPress(){
         if(this.state.isShow){
             this.setState({

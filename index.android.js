@@ -14,14 +14,16 @@ import StatusBarComponent from './component/StatusBarComponent';
 import ToolbarAndroidComponent from './component/ToolbarAndroidComponent';
 import ViewPagerAndroidComponent from './component/ViewPagerAndroidComponent';
 import WebViewComponent from './component/WebViewComponent';
-import LoginComponent from './component/Net'
+import LoginComponent from './component/Net';
+import NetListView from './component/NetListView';
+import GridViewComponent from './component/GridViewComponent'
 
 import React, { Component } from 'react';
 import {
   AppRegistry,
 } from 'react-native';
 
-AppRegistry.registerComponent('MovieProject', () => LoginComponent);
+AppRegistry.registerComponent('MovieProject', () => GridViewComponent);
 
 // getDefaultProps    ES6语法改为使用static defaultProps={};static propTypes={};
 // getInitialState

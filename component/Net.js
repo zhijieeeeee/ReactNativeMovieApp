@@ -18,11 +18,8 @@ import {
 	StatusBar,
 } from 'react-native';
 
-import SCREEN_WIDTH from './Constant';
-import SCREEN_HEIGHT from './Constant';
-
-// const screenWidth=Dimensions.get('window').width;
-// const screenHeight=Dimensions.get('window').height;
+const SCREEN_WIDTH = Dimensions.get('window').width;
+const SCREEN_HEIGHT = Dimensions.get('window').height;
 const LOGIN_URL='http://218.89.222.118:8100/soaservice/UserController/login';
 const GET_AREA_URL='http://218.89.222.118:8100/soaservice/PublicController/getAllArea'
 
@@ -96,11 +93,9 @@ export default class LoginComponent extends Component{
 					translucent={true}
 					backgroundColor={'transparent'}/>
         <Image source={require('../img/login_bg.png')} style={{flex:1,width:SCREEN_WIDTH,height:SCREEN_HEIGHT}}>
-					<View style={{width:SCREEN_WIDTH,height:140,margin:10}}>
-						<Image source={require('../img/login_logo.png')}
-							style={{flex:1,width:SCREEN_WIDTH}}
-							resizeMode={'contain'}/>
-					</View>
+					<Image source={require('../img/login_logo.png')}
+						style={{width:SCREEN_WIDTH-20,height:140,margin:10}}
+						resizeMode={'contain'}/>
 
 					<View style={styles.content_view}>
             <Text style={{fontSize:20,color:'white',textAlign:'center'}}>用户登录</Text>
