@@ -60,7 +60,7 @@ export default class NetListView extends Component{
     return(
       <View style={styles.loading_container}>
         <ActivityIndicator
-          animated={true}
+          animating={true}
           color={'blue'}
           size={'large'}/>
         <Text style={{fontSize:16,color:'blue'}}>正在加载...</Text>
@@ -107,7 +107,7 @@ export default class NetListView extends Component{
   renderFooterView(){
     return(
       <ActivityIndicator
-        animated={true}
+        animating={true}
         color={'blue'}
         size={'large'}/>
     );

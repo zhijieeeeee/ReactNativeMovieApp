@@ -23,7 +23,7 @@ import {
   AppRegistry,
 } from 'react-native';
 
-AppRegistry.registerComponent('MovieProject', () => GridViewComponent);
+AppRegistry.registerComponent('MovieProject', () => LoginComponent);
 
 // getDefaultProps    ES6语法改为使用static defaultProps={};static propTypes={};
 // getInitialState

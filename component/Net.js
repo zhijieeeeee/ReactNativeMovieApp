@@ -125,7 +125,7 @@ export default class LoginComponent extends Component{
 					<View style={styles.modal_container}>
 						<View style={styles.modal_inner_container}>
 							<ActivityIndicator
-								animated={true}
+								animating={true}
 								color={'deepskyblue'}
 								size={'large'}/>
 						</View>

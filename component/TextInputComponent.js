@@ -24,14 +24,14 @@ class TextInputComponent extends Component{
   onSearch(text){
     this.setState({
       show:text?true:false,
-      content:text
+      content:text,
     });
   }
 
   onItemClick(searchContent){
     this.setState({
       show:false,
-      content:searchContent
+      content:searchContent,
     });
   }
 
