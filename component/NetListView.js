@@ -118,7 +118,7 @@ export default class NetListView extends Component{
     this.fetchData(page,createUserId,title);
   }
 
-  fetchData(page,userId,title){
+  fetchData(page,userId,title){   //也可以写成  fetchData=(page,userId,title)=>{}
     this.setState({
       isRefreshing:true,
     });

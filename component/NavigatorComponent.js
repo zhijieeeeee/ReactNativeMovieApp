@@ -26,7 +26,12 @@ class NavigatorComponent extends Component{
         />
         <Navigator
           //设置第一页
-          initialRoute={{name:defaultName,component:defaultComponent}}
+          initialRoute={{ //加上param可以为第一个传递props参数
+            name:defaultName,
+            component:defaultComponent,
+            params:{
+              page:11111,
+            }}}
           //跳转方式  node_modules/react-native/Libraries/CustomComponents/Navigator/NavigatorSceneConfigs.js
           configureScene={(route)=>{
             return Navigator.SceneConfigs.HorizontalSwipeJump ;

@@ -11,6 +11,9 @@ import {
   ListView,
   TouchableOpacity,
   ActivityIndicator,
+  BackAndroid,
+  Platform,
+  ToastAndroid,
 } from 'react-native';
 
 //本地json测试
@@ -29,6 +32,7 @@ class MovieComponent extends Component {
     };
     // 在ES6中，如果在自定义的函数里使用了this关键字，则需要对其进行“绑定”操作，否则this的指向不对
     this.fetchData.bind(this);
+    this.onBack=this.onBack.bind(this);
   }
 
   //在ES6语法中生命周期函数getDefaultProps()改为了下面的
@@ -63,8 +67,29 @@ class MovieComponent extends Component {
   onBack(){
     const {navigator}=this.props;
     this.props.getSthBack('MovieComponent返回的');
+    //获取当前路由的数量
+    const routers=navigator.getCurrentRoutes();
+    ToastAndroid.show(routers.length+'',ToastAndroid.SHORT);
+    //
     if(navigator){
       navigator.pop();
+      return true;
+    }
+    return false;
+  }
+
+  componentWillMount(){
+    //BackAndroid在iOS平台下是一个空实现，所以理论上不做这个Platform.OS === 'android'判断也是安全的。
+    if (Platform.OS === 'android') {
+      //监听手机物理返回键
+      BackAndroid.addEventListener('hardwareBackPress',this.onBack);
+    }
+  }
+
+  componentWillUnmount(){
+    if (Platform.OS === 'android') {
+      //移除监听
+      BackAndroid.removeEventListener('hardwareBackPress',this.onBack);
     }
   }
 
@@ -79,7 +104,7 @@ class MovieComponent extends Component {
     // var netMovie=this.state.movies[0];
     return (
       <View style={{flex:1}}>
-        <TouchableOpacity onPress={()=>this.onBack()}>
+        <TouchableOpacity onPress={this.onBack}>
           <Text style={{fontSize:20}}>返回</Text>
         </TouchableOpacity>
 

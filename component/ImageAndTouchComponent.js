@@ -70,12 +70,17 @@ class ImageAndTouchComponent extends Component{
             <Text>I'm TouchableOpacity</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={()=>this.pressConsole('MyButton')} activeOpacity={0.5}>
-            <MyButton label='哈哈哈' style={{width:100,backgroundColor:'red'}}/>
+        <TouchableOpacity  activeOpacity={0.5}>
+            <MyButton label='哈哈哈' style={{width:200,backgroundColor:'red',color:'white'}}
+              onPress={()=>this.pressConsole('MyButton')}/>
         </TouchableOpacity>
 
         <ArrayComponent
           news={['a1','b2','c3','d4','e5','f6']}/>
+
+        <MyView
+          onClick={()=>{alert('MyView')}} label={'MyView'}
+          style={{color:'blue',fontSize:16}}/>
       </View>
     );
   }
@@ -93,6 +98,16 @@ class ImageAndTouchComponent extends Component{
   }
 }
 
+class MyView extends Component{
+  render(){
+      return(
+          <View >
+              <Text onPress={this.props.onClick} {...this.props}>{this.props.label}</Text>
+          </View>
+      );
+  }
+}
+
 //将setNativeProps传递给子组件
 //如果你通过React.createClass方法自定义了一个组件，直接给它设置样式prop是不会生效的，你得把样式props层层向下传递给子组件，
 //直到子组件是一个能够直接定义样式的原生组件。
@@ -105,8 +120,8 @@ class MyButton extends Component{
     render(){
         return(
             //{...this.props}是把为MyButton设置的属性传递过来，遍历MyButton属性，传递给View
-            <View ref={component=>this._root=component} {...this.props}>
-                <Text>{this.props.label}</Text>
+            <View ref={component=>this._root=component}>
+                <Text {...this.props}>{this.props.label}</Text>
             </View>
         );
     }

@@ -61,7 +61,7 @@ class FirstPageComponent extends Component{
     return(
       <View style={styles.container}>
         <TouchableOpacity onPress={()=>this.onItemClick(0)}>
-          <Text style={styles.item}>MovieComponent</Text>
+          <Text style={styles.item}>MovieComponent{this.props.page}</Text>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={()=>this.onItemClick(1)}>
