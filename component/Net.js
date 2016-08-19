@@ -90,7 +90,7 @@ export default class LoginComponent extends Component{
     return(
       <View style={styles.container}>
 				<StatusBar
-					translucent={false}
+					translucent={true}
 					backgroundColor={'transparent'}/>
         <Image source={require('../img/login_bg.png')} style={{flex:1,width:SCREEN_WIDTH,height:SCREEN_HEIGHT}}>
 					<Image source={require('../img/login_logo.png')}

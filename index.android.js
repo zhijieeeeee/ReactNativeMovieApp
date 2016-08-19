@@ -17,14 +17,18 @@ import WebViewComponent from './component/WebViewComponent';
 import LoginComponent from './component/Net';
 import NetListView from './component/NetListView';
 import GridViewComponent from './component/GridViewComponent';
-import TabNavigatorComponent from './component/TabNavigatorComponent'
+import TabNavigatorComponent from './component/TabNavigatorComponent';
+
+
+import AsComponent from './api/AsyncStorageTest';
+import AlertTest from './api/Alert';
 
 import React, { Component } from 'react';
 import {
   AppRegistry,
 } from 'react-native';
 
-AppRegistry.registerComponent('MovieProject', () => GridViewComponent);
+AppRegistry.registerComponent('MovieProject', () => AsComponent);
 
 // getDefaultProps    ES6语法改为使用static defaultProps={};static propTypes={};
 // getInitialState

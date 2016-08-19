@@ -26,6 +26,7 @@ export default class ProgressBarAndroidComponent extends Component{
           color={'blue'}
           indeterminate={false}
           styleAttr={'Horizontal'}
+          //当前的进度值（在0到1之间）。
           progress={this.state.progress}/>
 
         <ProgressBarAndroid
