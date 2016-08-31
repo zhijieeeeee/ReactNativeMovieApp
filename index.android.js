@@ -22,13 +22,15 @@ import TabNavigatorComponent from './component/TabNavigatorComponent';
 
 import AsComponent from './api/AsyncStorageTest';
 import AlertTest from './api/Alert';
+import DatePickerAndroidApi from './api/DatePickerAndroid';
+import CameraRollApi from './api/CameraRoll';
 
 import React, { Component } from 'react';
 import {
   AppRegistry,
 } from 'react-native';
 
-AppRegistry.registerComponent('MovieProject', () => ImageAndTouchComponent);
+AppRegistry.registerComponent('MovieProject', () => CameraRollApi);
 
 // getDefaultProps    ES6语法改为使用static defaultProps={};static propTypes={};
 // getInitialState

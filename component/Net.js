@@ -27,8 +27,8 @@ export default class LoginComponent extends Component{
   constructor(props){
     super(props);
 		this.state={
-			account:null,
-			pwd:null,
+			account:'government',
+			pwd:'government',
 			isProgressVisible:false,
 		};
   }
@@ -64,6 +64,11 @@ export default class LoginComponent extends Component{
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
 			body:'account='+account+'&password='+pwd
+			//有些服务器无法识别下面这种方式
+			// body:JSON.stringify({
+			// 	account:account,
+			// 	password:pwd,
+			// })
 		})
 		.then((response) => response.text())
 		.then((responseData)=>{
@@ -102,12 +107,14 @@ export default class LoginComponent extends Component{
 						<TextInput
 							style={styles.input}
 							placeholder='请输入用户名'
+							defaultValue='government'
 							placeholderTextColor='white'
 							underlineColorAndroid="white"
 							onChangeText={(text)=>{this.setState({account:text})}}/>
 						<TextInput
 							style={styles.input}
 							placeholder='请输入密码'
+							defaultValue='government'
 							placeholderTextColor='white'
 							underlineColorAndroid="white"
 							secureTextEntry={true}
