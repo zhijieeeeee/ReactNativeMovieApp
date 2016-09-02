@@ -28,13 +28,14 @@ import GeolocatonApi from './api/Geolocation';
 import PanResponderApi from './api/PanResponder';
 import AndroidNativeApi from './api/AndroidNativeMethod';
 import PromiseLearn from './api/PromiseTest';
+import ClipboardApi from './api/Clipboard';
 
 import React, { Component } from 'react';
 import {
   AppRegistry,
 } from 'react-native';
 
-AppRegistry.registerComponent('MovieProject', () => AndroidNativeApi);
+AppRegistry.registerComponent('MovieProject', () => ClipboardApi);
 
 // getDefaultProps    ES6语法改为使用static defaultProps={};static propTypes={};
 // getInitialState

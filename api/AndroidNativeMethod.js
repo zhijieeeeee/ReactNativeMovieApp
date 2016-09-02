@@ -39,14 +39,14 @@ export default class AndroidNativeApi extends Component{
 
 		//捕获异常和获取返回值写法一
 		try{
-	    var {sum}=await NativeModules.MyNativeModule.methodWithPromise(9,9);
+	    var {sum}=await NativeModules.MyNativeModule.methodWithPromise(5,5);
 			alert(sum+'');
 		}catch(e){
 			console.error(e);
 		}
 
 		//捕获异常和获取返回值写法二
-		await NativeModules.MyNativeModule.methodWithPromise(9,9).then(result=>{
+		await NativeModules.MyNativeModule.methodWithPromise(5,5).then(result=>{
 			alert(result.sum+'');
 		}).catch(error=>{
 			console.error(e);
