@@ -3,10 +3,13 @@ package com.movieproject;
 import android.content.Context;
 import android.widget.Toast;
 
+import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Callback;
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.WritableMap;
 
 /**
  * <p>
@@ -45,5 +48,25 @@ public class MyNativeModule extends ReactContextBaseJavaModule {
     public void methodWithCallback(int a, int b, Callback callback){
         int sum=a+b;
         callback.invoke(sum);
+    }
+
+    /**
+     * 通过Promise
+     * @param a
+     * @param b
+     * @param promise
+     */
+    @ReactMethod
+    public void methodWithPromise(int a, int b, Promise promise){
+        try {
+            int sum=a+b;
+            WritableMap map = Arguments.createMap();
+            map.putInt("sum",sum);
+            promise.resolve(map);
+        }catch (Exception e){
+            promise.reject(e.getMessage(),e);
+        }
+
+
     }
 }

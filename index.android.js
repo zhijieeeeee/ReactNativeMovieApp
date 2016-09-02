@@ -27,6 +27,7 @@ import CameraRollApi from './api/CameraRoll';
 import GeolocatonApi from './api/Geolocation';
 import PanResponderApi from './api/PanResponder';
 import AndroidNativeApi from './api/AndroidNativeMethod';
+import PromiseLearn from './api/PromiseTest';
 
 import React, { Component } from 'react';
 import {
