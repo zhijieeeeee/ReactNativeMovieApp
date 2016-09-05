@@ -35,7 +35,7 @@ import {
   AppRegistry,
 } from 'react-native';
 
-AppRegistry.registerComponent('MovieProject', () => ClipboardApi);
+AppRegistry.registerComponent('MovieProject', () => AndroidNativeApi);
 
 // getDefaultProps    ES6语法改为使用static defaultProps={};static propTypes={};
 // getInitialState

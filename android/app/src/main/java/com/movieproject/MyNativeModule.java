@@ -29,7 +29,7 @@ public class MyNativeModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "MyNativeModule";
+        return "My";
     }
 
 

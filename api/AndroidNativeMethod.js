@@ -16,17 +16,20 @@ export default class AndroidNativeApi extends Component{
 	//async函数返回一个Promise对象
   async onUseAndroidNative(){
 		//正常情况下，await命令后面是一个Promise对象。如果不是，会被转成一个立即resolve的Promise对象。
-		await new Promise(resolve=>{
-			setTimeout(()=>{
-				resolve();
-			},5000);
-		});
+		try {
+			await new Promise(resolve=>{
+				setTimeout(()=>{
+					resolve();
+				},5000);
+			});
+		} catch (e) {
 
-		NativeModules.MyNativeModule.showMsg('我调用了Android的Toast')
+		}
+		NativeModules.My.showMsg('我调用了Android的Toast')
   }
 
   onUseAndroidNativeWithCallBack(){
-    NativeModules.MyNativeModule.methodWithCallback(9,9,
+    NativeModules.My.methodWithCallback(9,9,
       (sum)=>{
         alert(sum+'');
       }
@@ -39,7 +42,7 @@ export default class AndroidNativeApi extends Component{
 
 		//捕获异常和获取返回值写法一
 		try{
-	    var {sum}=await NativeModules.MyNativeModule.methodWithPromise(5,5);
+	    var {sum}=await NativeModules.My.methodWithPromise(5,5);
 			alert(sum+'');
 		}catch(e){
 			console.error(e);
